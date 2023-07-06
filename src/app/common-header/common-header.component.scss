@@ -1,0 +1,33 @@
+.toolbar {
+    width: 100%;
+    height: 68px;
+    background: #0c0c6d;
+    color: #FFF;
+
+    .div1 {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .div2 {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        color: white;
+    }
+
+    .div3 {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .icon {
+        height: 40px;
+        width: 40px;
+        margin-right: 5px;
+    }
+}
