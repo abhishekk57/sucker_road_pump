@@ -1,8 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from './SharedModule';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {
@@ -16,23 +16,23 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: () => import('./dash-board/dash-board.module').then((m) => m.DashBoardPageModule),
+        loadChildren: () => import('./modules/dash-board/dash-board.module').then((m) => m.DashBoardPageModule),
       },
       {
         path: 'wells',
-        loadChildren: () => import('./wells/wells.module').then((m) => m.WellsPageModule),
+        loadChildren: () => import('./modules/wells/wells.module').then((m) => m.WellsPageModule),
       },
       {
         path: 'alerts',
-        loadChildren: () => import('./alerts/alerts.module').then((m) => m.AlertsPageModule),
+        loadChildren: () => import('./modules/alerts/alerts.module').then((m) => m.AlertsPageModule),
       },
       {
         path: 'events',
-        loadChildren: () => import('./events/events.module').then((m) => m.EventsPageModule),
+        loadChildren: () => import('./modules/events/events.module').then((m) => m.EventsPageModule),
       },
       {
         path: 'more',
-        loadChildren: () => import('./more/more.module').then( m => m.MorePageModule)
+        loadChildren: () => import('./modules/more/more.module').then( m => m.MorePageModule)
       },
     ],
   }
