@@ -24,6 +24,7 @@
     "@awesome-cordova-plugins/ionic-webview": "^6.3.0",
     "@awesome-cordova-plugins/network": "^6.3.0",
     "@awesome-cordova-plugins/sqlite": "^6.3.0",
+    "@awesome-cordova-plugins/status-bar": "^6.3.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^9.0.0",
     "highcharts": "^11.1.0",

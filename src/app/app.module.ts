@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { SharedModule } from './SharedModule';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HighchartsChartModule,SharedModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HighchartsChartModule, SharedModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, StatusBar],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }
