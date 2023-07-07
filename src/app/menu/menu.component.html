@@ -1,22 +1,27 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="play-circle"></ion-icon>
+    <ion-tab-button (click)="getSelectedTab('home')" tab="home">
+      <div *ngIf="activeTabName =='home'" class="topbar"></div>
+      <ion-icon name="apps-outline"></ion-icon>
       Dashboard
     </ion-tab-button>
-    <ion-tab-button tab="wells">
-      <ion-icon name="radio"></ion-icon>
+    <ion-tab-button (click)="getSelectedTab('wells')" tab="wells">
+      <div *ngIf="activeTabName =='wells'" class="topbar"></div>
+      <ion-icon name="bar-chart-outline"></ion-icon>
       Wells
     </ion-tab-button>
-    <ion-tab-button tab="alerts">
+    <ion-tab-button (click)="getSelectedTab('alerts')" tab="alerts">
+      <div *ngIf="activeTabName =='alerts'" class="topbar"></div>
       <ion-icon name="library"></ion-icon>
       Alerts
     </ion-tab-button>
-    <ion-tab-button tab="events">
+    <ion-tab-button (click)="getSelectedTab('events')" tab="events">
+      <div *ngIf="activeTabName =='events'" class="topbar"></div>
       <ion-icon name="library"></ion-icon>
       Events
     </ion-tab-button>
-    <ion-tab-button tab="more">
+    <ion-tab-button (click)="getSelectedTab('more')" tab="more">
+      <div *ngIf="activeTabName =='more'" class="topbar"></div>
       <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
       More
     </ion-tab-button>

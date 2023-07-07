@@ -8,7 +8,7 @@ ion-col {
 .header {
   width: 100%;
   background: #06062b;
-  height: 40px;
+  height: 48px;
 }
 
 .container {
@@ -60,12 +60,26 @@ ion-col {
             }
           }
 
-          .status_bar {
+          .status_bar1 {
             width: 5px;
-            background: green;
             margin-left: 10px;
             margin-top: 5px;
             margin-bottom: 5px;
+            background: #eb445a;
+          }
+          .status_bar2 {
+            width: 5px;
+            margin-left: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background: #01d947;
+          }
+          .status_bar3 {
+            width: 5px;
+            margin-left: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background: #e0a41c;
           }
         }
 
@@ -80,7 +94,8 @@ ion-col {
     flex-direction: row;
     height: 24px !important;
     align-items: center;
-
+    padding-left: 13px;
+    padding-top: 10px;
     .d1 {
       display: flex;
       flex-direction: row;
@@ -110,7 +125,7 @@ ion-col {
       .square2 {
         width: 12px;
         height: 12px;
-        background: #2dd36f;
+        background: #01d947;
         margin-right: 5px;
         margin-left: 5px;
       }

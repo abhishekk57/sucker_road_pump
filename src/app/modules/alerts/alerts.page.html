@@ -25,9 +25,9 @@
 
     <div class="content_cont">
       <div class="d1_c">
-        <div class="d1_sc" *ngFor="let item of data; let index">
+        <div class="d1_sc" *ngFor="let item of data; let i= index">
           <div class="d1_sc1">
-            <div class="status_bar"></div>
+            <div [ngClass]="i == 0 ? 'status_bar1':( i==1 ?'status_bar2':'status_bar3')"></div>
             <div class="d1_detail">
               <p class="p1">{{item?.well_name}}</p>
               <p class="p2">{{item?.desc}}</p>

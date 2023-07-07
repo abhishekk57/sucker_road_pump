@@ -15,6 +15,18 @@ export class AlertsPage implements OnInit {
     this.generateItems();
   }
 
+  getColorStatus(index: any) {
+    if (index === 0) {
+      return "#eb445a"
+    } else if (index === 1) {
+      return "#135d54"
+    } else if (index === 2) {
+      return "#e0a41c"
+    } else {
+      return "#eb445a"
+    }
+  }
+
   private generateItems() {
     for (let i = 0; i < 15; i++) {
       let obj = {
