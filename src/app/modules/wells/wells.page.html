@@ -8,14 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar value="Value"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items; let index">
-      <ion-avatar slot="start">
-        <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
-      </ion-avatar>
-      <ion-checkbox></ion-checkbox>
-      <ion-label>{{ item }}</ion-label>
+      <ion-checkbox aria-label="{{item}}"></ion-checkbox>
+      {{item}}
     </ion-item>
   </ion-list>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

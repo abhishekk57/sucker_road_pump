@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-alerts',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alerts.page.scss'],
 })
 export class AlertsPage implements OnInit {
-
+  titleData: any = "Alerts";
+  data: any = []
   constructor() { }
 
   ngOnInit() {
+    this.generateItems();
   }
 
+  private generateItems() {
+    for (let i = 0; i < 15; i++) {
+      let obj = {
+        well_name: "Well Name 001",
+        desc: "Description will be seen here. Description will be seen here.",
+        status: 'Status1',
+        time: "2023:04:12 07:33:56 AM"
+      }
+      this.data.push(obj);
+    }
+  }
+  onIonInfinite(event: any) {
+    this.generateItems();
+    setTimeout(() => {
+      (event as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 }
