@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
@@ -9,8 +10,8 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 })
 export class WellsPage implements OnInit {
   items : string[] = [];CurrenPageTitle: any="Wells";
-;
 
+constructor(private router:Router){}
   ngOnInit() {
     this.generateItems();
   }
@@ -21,7 +22,11 @@ export class WellsPage implements OnInit {
       this.items.push(`Item ${count + i}`);
     }
   }
-
+  navigateTo(item: any) {
+    this.router.navigateByUrl('well-detail',{
+      state:item
+    });
+  }
   onIonInfinite(ev:any) {
     this.generateItems();
     setTimeout(() => {

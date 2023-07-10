@@ -35,6 +35,18 @@ const routes: Routes = [
         loadChildren: () => import('./modules/more/more.module').then( m => m.MorePageModule)
       },
     ],
+  },
+  {
+    path: 'well-detail',
+    loadChildren: () => import('./well-detail/well-detail.module').then( m => m.WellDetailPageModule)
+  },
+  {
+    path: 'alert-detail',
+    loadChildren: () => import('./alert-detail/alert-detail.module').then( m => m.AlertDetailPageModule)
+  },
+  {
+    path: 'event-detail',
+    loadChildren: () => import('./event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   }
 ]
 

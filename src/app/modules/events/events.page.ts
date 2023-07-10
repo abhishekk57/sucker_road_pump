@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
@@ -11,12 +12,16 @@ export class EventsPage implements OnInit {
   titleData: any = "Events";
   data: any = []
   CurrenPageTitle: string = "Events";
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     this.generateItems();
   }
-
+  navigateTo(item: any) {
+    this.router.navigateByUrl('event-detail',{
+      state:item
+    });
+  }
   getColorStatus(index: any) {
     if (index === 0) {
       return "#eb445a"
