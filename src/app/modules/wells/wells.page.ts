@@ -8,7 +8,8 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
   styleUrls: ['./wells.page.scss'],
 })
 export class WellsPage implements OnInit {
-  items : string[] = [];;
+  items : string[] = [];CurrenPageTitle: any="Wells";
+;
 
   ngOnInit() {
     this.generateItems();

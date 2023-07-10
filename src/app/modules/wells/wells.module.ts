@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { WellsPageRoutingModule } from './wells-routing.module';
 
 import { WellsPage } from './wells.page';
+import { SharedModule } from 'src/app/SharedModule';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WellsPageRoutingModule
+    WellsPageRoutingModule,
+    SharedModule
   ],
   declarations: [WellsPage],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

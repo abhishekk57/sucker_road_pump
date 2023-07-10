@@ -24,13 +24,16 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
-ion-content{
+
+ion-content {
    background: #FFF !important;
    --background: #FFF !important;
 }
+
 ion-toolbar {
-    --background: #0c0c6d;
+   --background: #0c0c6d;
 }
+
 //#06062b // dark
 //#2f2f69 // light dark
 //#474776 // light
@@ -39,19 +42,28 @@ ion-toolbar {
 // #2dd36f 
 // #e0a41c under pump
 ion-tab-bar {
-    --background: #0c0c6d;
-     background: #0c0c6d;
-     height: 68px;
-     ion-tab-button {
-        color: #FFF;
-     }
-     ion-icon {
-        color: #FFF;
-     }
+   --background: #0c0c6d;
+   background: #0c0c6d;
+   height: 68px;
+
+   ion-tab-button {
+      color: #FFF;
+   }
+
+   ion-icon {
+      color: #FFF;
+   }
 }
+
 ion-content {
-   background: #272745 !important;
-}
-ion-app {
+   --background: #272745 !important;
    margin-top: 58px !important;
+}
+
+.highcharts-background {
+   fill: #272745 !important;
+}
+.highcharts-axis-title {
+   color: #FFF;
+   fill: #FFF;
 }

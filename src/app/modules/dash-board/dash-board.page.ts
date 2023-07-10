@@ -8,7 +8,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
   styleUrls: ['./dash-board.page.scss'],
 })
 export class DashBoardPage implements OnInit {
-
+  CurrenPageTitle:any="Dashboard"
   constructor() { }
 
   ngOnInit() {
@@ -17,16 +17,37 @@ export class DashBoardPage implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     title: {
-      text: "Dynacard"
+      text: "Dynacard",
+      style:{
+        color:"#FFF"
+      }
     },
     subtitle: {
-      text: "SurfaceCard Load"
+      text: "SurfaceCard Load",
+      style:{
+        color:"#FFF"
+      }
     },
     yAxis: {
-      lineWidth: 1
+      className:"highcharts-y",
+      lineWidth: 1,
+      borderColor:'#FFF',
+      lineColor:"#FFF",
+      labels:{
+        style:{
+          color:"#FFF"
+        }
+      }
     },
     xAxis: {
-      crosshair: false
+      crosshair: false,
+      lineColor:"#FFF",
+      tickColor:"#FFF",
+      labels:{
+        style:{
+          color:"#FFF"
+        }
+      }
     },
     tooltip: {
       formatter: function () {

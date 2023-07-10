@@ -10,6 +10,7 @@ export class EventsPage implements OnInit {
 
   titleData: any = "Events";
   data: any = []
+  CurrenPageTitle: string = "Events";
   constructor() { }
 
   ngOnInit() {

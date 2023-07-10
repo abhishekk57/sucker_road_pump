@@ -8,6 +8,7 @@ import { DashBoardPageRoutingModule } from './dash-board-routing.module';
 
 import { DashBoardPage } from './dash-board.page';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { SharedModule } from 'src/app/SharedModule';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     FormsModule,
     IonicModule,
     DashBoardPageRoutingModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    SharedModule
   ],
   declarations: [DashBoardPage],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

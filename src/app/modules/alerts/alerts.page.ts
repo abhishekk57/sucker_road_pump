@@ -9,6 +9,7 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 export class AlertsPage implements OnInit {
   titleData: any = "Alerts";
   data: any = []
+  CurrenPageTitle: string = "Alerts";
   constructor() { }
 
   ngOnInit() {

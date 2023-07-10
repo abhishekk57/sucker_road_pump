@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MorePageRoutingModule } from './more-routing.module';
 
 import { MorePage } from './more.page';
+import { SharedModule } from "../../SharedModule";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    MorePageRoutingModule
-  ],
-  declarations: [MorePage]
+    declarations: [MorePage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        MorePageRoutingModule,
+        SharedModule
+    ]
 })
 export class MorePageModule {}
