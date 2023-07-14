@@ -21,9 +21,11 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@awesome-cordova-plugins/fingerprint-aio": "^6.4.0",
     "@awesome-cordova-plugins/ionic-webview": "^6.3.0",
     "@awesome-cordova-plugins/network": "^6.3.0",
-    "@awesome-cordova-plugins/sqlite": "^6.3.0",
+    "@awesome-cordova-plugins/splash-screen": "^6.4.0",
+    "@awesome-cordova-plugins/sqlite": "^6.4.0",
     "@awesome-cordova-plugins/status-bar": "^6.3.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^9.0.0",
@@ -54,6 +56,7 @@
     "cordova-android": "^12.0.0",
     "cordova-ios": "^6.3.0",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-fingerprint-aio": "^5.0.1",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-network-information": "^3.0.0",
@@ -84,7 +87,10 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-sqlite-storage": {},
-      "cordova-plugin-network-information": {}
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-fingerprint-aio": {
+        "FACEID_USAGE_DESCRIPTION": "Slb app authentication for all users"
+      }
     },
     "platforms": [
       "android",

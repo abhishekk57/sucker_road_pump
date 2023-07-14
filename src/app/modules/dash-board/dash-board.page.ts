@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { SeriesOptionsType } from 'highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.page.html',

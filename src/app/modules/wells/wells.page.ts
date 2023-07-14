@@ -9,28 +9,46 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
   styleUrls: ['./wells.page.scss'],
 })
 export class WellsPage implements OnInit {
-  items : string[] = [];CurrenPageTitle: any="Wells";
+  titleData: any = "Wells";
+  data: any = []
+  CurrenPageTitle: string = "Wells";
+  constructor(private router:Router) { }
 
-constructor(private router:Router){}
   ngOnInit() {
     this.generateItems();
   }
-
-  private generateItems() {
-    const count = this.items.length + 1;
-    for (let i = 0; i < 50; i++) {
-      this.items.push(`Item ${count + i}`);
-    }
-  }
   navigateTo(item: any) {
-    this.router.navigateByUrl('well-detail',{
+    this.router.navigateByUrl('event-detail',{
       state:item
     });
   }
-  onIonInfinite(ev:any) {
+  getColorStatus(index: any) {
+    if (index === 0) {
+      return "#eb445a"
+    } else if (index === 1) {
+      return "#135d54"
+    } else if (index === 2) {
+      return "#e0a41c"
+    } else {
+      return "#eb445a"
+    }
+  }
+
+  private generateItems() {
+    for (let i = 0; i < 15; i++) {
+      let obj = {
+        well_name: "Well Name 001",
+        desc: "Description will be seen here. Description will be seen here.",
+        status: 'Status1',
+        time: "2023:04:12 07:33:56 AM"
+      }
+      this.data.push(obj);
+    }
+  }
+  onIonInfinite(event: any) {
     this.generateItems();
     setTimeout(() => {
-      (ev as InfiniteScrollCustomEvent).target.complete();
+      (event as InfiniteScrollCustomEvent).target.complete();
     }, 500);
   }
 
