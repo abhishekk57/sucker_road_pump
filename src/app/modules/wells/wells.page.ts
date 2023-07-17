@@ -12,6 +12,7 @@ export class WellsPage implements OnInit {
   titleData: any = "Wells";
   data: any = []
   CurrenPageTitle: string = "Wells";
+  datetime = 'assets/svg/datetime.svg';
   constructor(private router:Router) { }
 
   ngOnInit() {

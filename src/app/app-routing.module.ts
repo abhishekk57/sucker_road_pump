@@ -4,8 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { SharedModule } from './SharedModule';
 import { MenuComponent } from './menu/menu.component';
 
-const routes: Routes = [
-  {
+const routes: Routes = [{
     path: '',
     component: MenuComponent,
     children: [

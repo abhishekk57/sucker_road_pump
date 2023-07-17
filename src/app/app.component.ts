@@ -8,6 +8,22 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  pages = [{
+      title: 'Home',
+      url: '/home',
+      icon: 'log-in'
+    },
+    {
+      title: 'wells',
+      url: '/wells',
+      icon: 'person'
+    },
+    {
+      title: 'alerts',
+      url: '/alerts',
+      icon: 'information-circle'
+    }];
+    CurrenPageTitle:any="";
   constructor(public statusBar: StatusBar, private platform: Platform,private splashScreen:SplashScreen) { 
      this.initializeApp();
    }

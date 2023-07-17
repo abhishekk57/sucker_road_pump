@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { SeriesOptionsType } from 'highcharts';
+declare var require: any;
+let Boost = require('highcharts/modules/boost');
+let noData = require('highcharts/modules/no-data-to-display');
+let More = require('highcharts/highcharts-more');
+Boost(Highcharts);
+noData(Highcharts);
+More(Highcharts);
+noData(Highcharts);
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.page.html',
   styleUrls: ['./dash-board.page.scss'],
 })
 export class DashBoardPage implements OnInit {
-  CurrenPageTitle:any="Dashboard"
+  CurrenPageTitle: any = "Dashboard"
   constructor() { }
 
   ngOnInit() {
@@ -17,36 +25,39 @@ export class DashBoardPage implements OnInit {
   chartOptions: Highcharts.Options = {
     title: {
       text: "Dynacard",
-      style:{
-        color:"#FFF"
+      style: {
+        color: "#FFF"
       }
     },
     subtitle: {
       text: "SurfaceCard Load",
-      style:{
-        color:"#FFF"
+      style: {
+        color: "#FFF"
       }
     },
     yAxis: {
-      className:"highcharts-y",
+      className: "highcharts-y",
       lineWidth: 1,
-      borderColor:'#FFF',
-      lineColor:"#FFF",
-      labels:{
-        style:{
-          color:"#FFF"
+      borderColor: '#FFF',
+      lineColor: "#FFF",
+      labels: {
+        style: {
+          color: "#FFF"
         }
       }
     },
     xAxis: {
       crosshair: false,
-      lineColor:"#FFF",
-      tickColor:"#FFF",
-      labels:{
-        style:{
-          color:"#FFF"
+      lineColor: "#FFF",
+      tickColor: "#FFF",
+      labels: {
+        style: {
+          color: "#FFF"
         }
       }
+    },
+    accessibility: {
+      enabled: false
     },
     tooltip: {
       formatter: function () {

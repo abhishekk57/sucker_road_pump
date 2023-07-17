@@ -31,15 +31,20 @@
             <div [ngClass]="i == 0 ? 'status_bar1':( i==1 ?'status_bar2':'status_bar3')"></div>
             <div class="d1_detail">
               <p class="p1">{{item?.well_name}}</p>
-              <p class="p2">{{item?.desc}}</p>
-              <div style="display: flex;flex: 1;flex-direction: row;padding: 10px;">
-                <div style="display: flex;flex: 1;color: #fff !important;font-size: 13px;">
-                  {{item?.time}}
+              <p class="p1 p12">Pump Status : No Comms</p>
+              <p class="p1 p12">Structural Load %: 50%</p>
+              <p class="p1 p12">Pump Fillage : 50%</p>
+              <p class="p1 p12">Mode Operation : 50%</p>
+              <div class="d1_sc2">
+                <div class="d1_sc22">
+                  <ion-icon [src]="datetime" class="font-size-16"></ion-icon>
+                  2020-04-14 13:14:59
                 </div>
-                <div style="display: flex;float: 1;color: #fff !important; font-size: 13px;">
-                  {{item?.status}}
+                <div class="d1_sc23">
+                  Status: Status1
                 </div>
               </div>
+
             </div>
           </div>
         </div>
