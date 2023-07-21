@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./more.page.scss'],
 })
 export class MorePage implements OnInit {
-CurrenPageTitle: any = "More";
-
+  CurrenPageTitle: any = "More";
+  titleData: string = "More";
   constructor() { }
 
   ngOnInit() {

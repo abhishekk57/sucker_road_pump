@@ -1,11 +1,18 @@
 <div class="div1">
   <div class="div2">
+    <div (click)="goBack()" class="icon-16" *ngIf="isChild">
+      <ion-icon [src]="leftArrow"></ion-icon>
+    </div>
     <p>
       {{textTitle}}
     </p>
   </div>
   <div class="div3">
-    <ion-icon name="search"></ion-icon>
-    <ion-icon name="options-outline"></ion-icon>
+    <div (click)="presentModal()">
+      <ion-icon [src]="SearchIcon"></ion-icon>
+    </div>
+    <div (click)="presentModal()">
+      <ion-icon [src]="FilterIcon"></ion-icon>
+    </div>
   </div>
 </div>

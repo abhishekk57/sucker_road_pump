@@ -17,7 +17,7 @@ export class AlertsPage implements OnInit {
     this.generateItems();
   }
   navigateTo(item: any) {
-    this.router.navigateByUrl('alert-detail',{
+    this.router.navigateByUrl('/alerts/alert-detail',{
       state:item
     });
   }

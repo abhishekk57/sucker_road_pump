@@ -15,7 +15,8 @@ noData(Highcharts);
   styleUrls: ['./dash-board.page.scss'],
 })
 export class DashBoardPage implements OnInit {
-  CurrenPageTitle: any = "Dashboard"
+  CurrenPageTitle: any = "Dashboard";
+  titleData: string = "Dashboard";
   constructor() { }
 
   ngOnInit() {

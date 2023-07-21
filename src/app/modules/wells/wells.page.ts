@@ -19,7 +19,7 @@ export class WellsPage implements OnInit {
     this.generateItems();
   }
   navigateTo(item: any) {
-    this.router.navigateByUrl('event-detail',{
+    this.router.navigateByUrl('/wells/well-detail',{
       state:item
     });
   }

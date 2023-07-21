@@ -38,7 +38,7 @@ export class AppComponent {
     });
   }
   async hideSplashScreen() {
-    await SplashScreen.hide();
+    // await SplashScreen.hide();
     let option: BackgroundColorOptions = {
       color: "#0c0c6d"
     }

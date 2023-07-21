@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./alert-detail.page.scss'],
 })
 export class AlertDetailPage implements OnInit {
-
+  titleData: any = "Alert Detail";
+  CurrenPageTitle: any = "Alert Detail";
+  isChild: boolean = true;
   constructor(private router:Router) { }
 
   ngOnInit() {

@@ -20,6 +20,27 @@
         align-items: center;
         font-size: 13px;
         padding-left: 10px;
+
+        .d3{
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            word-spacing: 5px;
+            .d2delfi {
+                font-size: 76px;
+                color: white;
+                height: 30px;
+            }
+            .d2down {
+                font-size: 20px;
+                color: white;
+                height: 20px;
+                padding-left: 5px;
+            }
+        }
+
     }
 
     .div3 {
@@ -30,8 +51,9 @@
     }
 
     .icon {
-        height: 40px;
-        width: 40px;
-        margin-right: 5px;
+        height: 20px;
+        width: 20px;
+        margin-right: 15px;
     }
+
 }
