@@ -20,6 +20,7 @@ export class DashBoardPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   Highcharts: typeof Highcharts = Highcharts;

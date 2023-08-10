@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'chart',
+  appId: 'com.srp',
+  appName: 'srp',
   webDir: 'www',
   server: {
     androidScheme: 'https'
@@ -17,6 +17,14 @@ const config: CapacitorConfig = {
       SplashScreen: 'screen',
       SplashScreenDelay: '3000'
     }
+  },
+  plugins: {
+    CapacitorCookies: {
+      enabled: true
+    },
+    CapacitorHttp: {
+      enabled: true,
+    },
   }
 };
 

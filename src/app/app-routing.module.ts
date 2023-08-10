@@ -1,18 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { SharedModule } from './SharedModule';
+import { SharedModule } from './shared-modules';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [{
   path: '',
+  pathMatch: 'full',
+  redirectTo: 'home',
+},
+{
+  path: 'login',
+  loadChildren: () => import('./modules/auth-module/login/login.module').then(m => m.LoginPageModule)
+}, {
+  path: '',
   component: MenuComponent,
   children: [
-    {
-      path: '',
-      pathMatch: 'full',
-      redirectTo: 'home',
-    },
     {
       path: 'home',
       loadChildren: () => import('./modules/dash-board/dash-board.module').then((m) => m.DashBoardPageModule),
@@ -22,11 +25,11 @@ const routes: Routes = [{
       children: [
         {
           path: '',
-          loadChildren: () => import('./modules/wells/wells.module').then((m) => m.WellsPageModule),
+          loadChildren: () => import('./modules/well-module/wells/wells.module').then((m) => m.WellsPageModule),
         },
         {
           path: 'well-detail',
-          loadChildren: () => import('./well-detail/well-detail.module').then(m => m.WellDetailPageModule),
+          loadChildren: () => import('./modules/well-module/well-detail/well-detail.module').then(m => m.WellDetailPageModule),
         }
       ]
     },
@@ -35,11 +38,11 @@ const routes: Routes = [{
       children: [
         {
           path: '',
-          loadChildren: () => import('./modules/alerts/alerts.module').then((m) => m.AlertsPageModule),
+          loadChildren: () => import('./modules/alerts-module/alerts/alerts.module').then((m) => m.AlertsPageModule),
         },
         {
           path: 'alert-detail',
-          loadChildren: () => import('./alert-detail/alert-detail.module').then(m => m.AlertDetailPageModule)
+          loadChildren: () => import('./modules/alerts-module/alert-detail/alert-detail.module').then(m => m.AlertDetailPageModule)
         }
       ]
 
@@ -49,24 +52,24 @@ const routes: Routes = [{
       children: [
         {
           path: "",
-          loadChildren: () => import('./modules/events/events.module').then((m) => m.EventsPageModule),
+          loadChildren: () => import('./modules/events-module/events/events.module').then((m) => m.EventsPageModule),
         },
         {
           path: 'event-detail',
-          loadChildren: () => import('./event-detail/event-detail.module').then(m => m.EventDetailPageModule)
+          loadChildren: () => import('./modules/events-module/event-detail/event-detail.module').then(m => m.EventDetailPageModule)
         }
       ]
     },
     {
       path: 'more',
-      children:[
+      children: [
         {
-          path:'',
+          path: '',
           loadChildren: () => import('./modules/more/more.module').then(m => m.MorePageModule)
         }
       ]
     },
-  ],
+  ]
 }
 ]
 

@@ -1,0 +1,147 @@
+<app-common-header [title]="CurrenPageTitle"></app-common-header>
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <app-sub-header [isChild]="isChild" [textTitle]="titleData"></app-sub-header>
+  </div>
+  <div class="container">
+
+    <div class="drow_down">
+      <div (click)="_OnOpenModalClick()" class="item-a1">
+        <p style="color: #CCCFDE;">{{selectedItem}}</p>
+        <ion-icon [src]="RightIcon"></ion-icon>
+      </div>
+      <ion-modal [isOpen]="isOpen" class="select-modal">
+        <ng-template>
+          <ion-content style="--background:#8B90AD !important;" class="ion-padding">
+            <div (click)="_OnSelectItem('Well info')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Well info' ?'#6BA7FF':'#CCCFDE'}">Well info</p>
+            </div>
+            <div (click)="_OnSelectItem('Dynacard')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Dynacard' ?'#6BA7FF':'#CCCFDE'}">Dynacard</p>
+            </div>
+            <div (click)="_OnSelectItem('Algorithms & Mitigations')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Algorithms & Mitigations' ?'#6BA7FF':'#CCCFDE'}">Algorithms &
+                Mitigations</p>
+            </div>
+            <div (click)="_OnSelectItem('Charting')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Charting' ?'#6BA7FF':'#CCCFDE'}">Charting</p>
+            </div>
+            <div (click)="_OnSelectItem('Alerts')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Alerts' ?'#6BA7FF':'#CCCFDE'}">Alerts</p>
+            </div>
+            <div (click)="_OnSelectItem('Event Log')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Event Log' ?'#6BA7FF':'#CCCFDE'}">Event Log</p>
+            </div>
+            <div (click)="_OnSelectItem('Telemetry & Control')" class="item-a12">
+              <p [ngStyle]="{color:selectedItem =='Telemetry & Control' ?'#6BA7FF':'#CCCFDE'}">Telemetry & Control</p>
+            </div>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </div>
+
+
+    <div *ngIf="selectedItem=='Well info'" class="items_container">
+      <div class="item-a">
+        <p>AVG SPM <span>5.5 spm</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Pump Fillage <span>99.4 %</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Well State <span>Pumping Normal Sate</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Pump Card Diagnostics <span>Normal</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Motor Current <span>5.2 Amps</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Pump Displacement <span>278.0 bbls/day</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Current Card Area <span>107935.1</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Pump Intake Pressure <span>-4080.2</span></p>
+      </div>
+      <div class="item-a a1">
+        <p>Inferred Fluid Level <span>85.7</span></p>
+      </div>
+      <div class="item-a a1 a12">
+        Image will be Displayed here
+      </div>
+
+
+    </div>
+
+
+    <div *ngIf="selectedItem=='Dynacard'" class="items_container">
+
+      <!-- <div class="item-a a1 a12">
+        <div style="display: flex;flex: 1;">
+          <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+            style="width: 100%; height: 50%; display: block;"></highcharts-chart>
+        </div>
+      </div> -->
+
+      <app-well-dynacard></app-well-dynacard>
+
+    </div>
+    <div *ngIf="selectedItem=='Charting'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Charting Page
+      </div>
+
+    </div>
+
+    <div *ngIf="selectedItem=='Algorithms & Mitigations'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Algorithms & Mitigations Page
+      </div>
+
+    </div>
+
+    <div *ngIf="selectedItem=='Charting'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Charting Page
+      </div>
+
+    </div>
+    <div *ngIf="selectedItem=='Alerts'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Alerts Page
+      </div>
+
+    </div>
+
+    <div *ngIf="selectedItem=='Event Log'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Event Log Page
+      </div>
+
+    </div>
+
+    <div *ngIf="selectedItem=='Telemetry & Control'" class="items_container">
+
+      <div class="item-a a1 a12">
+        A Waiting Information for
+        Telemetry & Control Page
+      </div>
+
+    </div>
+
+
+  </div>
+</ion-content>

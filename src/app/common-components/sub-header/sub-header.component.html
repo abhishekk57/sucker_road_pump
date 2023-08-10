@@ -1,18 +1,33 @@
-<div class="div1">
-  <div class="div2">
-    <div (click)="goBack()" class="icon-16" *ngIf="isChild">
+<div class="container">
+
+  <div *ngIf="isSearch" class="diva1">
+    <div (click)="onBackBtnClick()" class="icon-16">
       <ion-icon [src]="leftArrow"></ion-icon>
     </div>
-    <p>
-      {{textTitle}}
-    </p>
+    <ion-searchbar [placeholder]="Search" [animated]="true" [debounce]="1000"
+      (ionInput)="handleInput($event)"></ion-searchbar>
   </div>
-  <div class="div3">
-    <div (click)="presentModal()">
-      <ion-icon [src]="SearchIcon"></ion-icon>
+
+  <div *ngIf="!isSearch" class="div1">
+    <div class="div2">
+      <div (click)="_OnBackIconClick()" class="icon-16" *ngIf="isChild">
+        <ion-icon [src]="leftArrow"></ion-icon>
+      </div>
+      <p style="font-family: SLBSans; margin-left: 8px;font-weight: 700;">
+        {{textTitle}}
+      </p>
     </div>
-    <div (click)="presentModal()">
-      <ion-icon [src]="FilterIcon"></ion-icon>
+    <div class="div3">
+      <div *ngIf="!isChild" (click)="_OnSearchIconClick()">
+        <ion-icon [src]="SearchIcon"></ion-icon>
+      </div>
+      <div *ngIf="!isChild" (click)="_OnFilterIconClick()">
+        <ion-icon [src]="FilterIcon"></ion-icon>
+      </div>
+      <div (click)="_OnCommentIconClick()">
+        <ion-icon [src]="CommentIcon"></ion-icon>
+      </div>
     </div>
   </div>
+
 </div>

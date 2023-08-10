@@ -1,8 +1,18 @@
-.topbar{
+.topbar {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 5px;
     background: #4c8dff;
+}
+
+.tab_icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-bottom: 5px;
+}
+
+ion-tabs {
+    font-family: 'SLBSans';
 }

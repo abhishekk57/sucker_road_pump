@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { DashBoardPageRoutingModule } from './dash-board-routing.module';
 import { DashBoardPage } from './dash-board.page';
-import { SharedModule } from 'src/app/SharedModule';
+import { SharedModule } from 'src/app/shared-modules';
 import { HighchartsChartModule } from 'highcharts-angular';
 @NgModule({
   imports: [

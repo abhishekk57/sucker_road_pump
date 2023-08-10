@@ -1,0 +1,41 @@
+<app-common-header [title]="CurrenPageTitle"></app-common-header>
+<ion-content [fullscreen]="true">
+
+  <div class="header">
+    <app-sub-header (valueChange)="getInputValue($event)" (OnClickSearch)="OnClickSearch()" [isSearch]="isSearch"
+      [textTitle]="titleData"></app-sub-header>
+  </div>
+  <div class="container">
+
+    <div class="content_cont">
+      <div class="d1_c">
+        <div class="d1_sc" *ngFor="let item of mWellList; let i= index">
+          <div (click)="navigateTo(item)" class="d1_sc1">
+
+            <div class="d1_detail">
+              <div class="well_1">
+                <p class="p1">{{item?.well_name}}</p>
+                <span style="font-size: 12px;color: #ADB1C7; margin-left: 9px;">2020-04-14 13:14:59</span>
+              </div>
+              <p class="p1 p12">Comms Status: <span>Comms Established</span></p>
+              <p class="p1 p12">Controller Status: <span>Shutdown</span></p>
+              <p class="p1 p12">SPM(Dimensionless): <span>50.0</span></p>
+              <div class="status_a">
+                <div
+                  [ngClass]="item?.status =='Over Pumping' ? 'status_bar1':( item?.status == 'Optimum Pumping' ?'status_bar2':'status_bar3')">
+
+                </div>
+                {{item?.status}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+
+  </div>
+</ion-content>

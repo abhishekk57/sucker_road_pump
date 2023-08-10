@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivationStart, Router, RouterOutlet } from '@angular/router';
 import { IonTabs, Platform } from '@ionic/angular';
+import { Calendar, Warning, Well, Dashboard, More } from '../../assets/index';
 
 @Component({
   selector: 'app-menu',
@@ -10,17 +11,24 @@ import { IonTabs, Platform } from '@ionic/angular';
 export class MenuComponent implements OnInit {
   @ViewChild('myTabs') tabs!: IonTabs;
   activeTabName: any = 'home';
-  constructor(private platform:Platform) { }
+  CalendarIcon: any = Calendar;
+  WarningIcon: any = Warning;
+  WellIcon: any = Well;
+  DashboardIcon: any = Dashboard;
+  MoreIcon: any = More;
+  isOpenPopOver:boolean = false;
+  constructor(private platform: Platform) { }
 
-  ngOnInit() { 
-   
+  ngOnInit() {
+
     this.platform.ready()
-    .then(()=>{
-      // this.showFingerprintAuthDlg();
-    })
+      .then(() => {
+        // this.showFingerprintAuthDlg();
+      })
   }
-  getSelectedTab(event:any): void {
+  getSelectedTab(event: any): void {
     this.activeTabName = event;
+    event == 'more' ? this.isOpenPopOver = true : false;
   }
 
   public showFingerprintAuthDlg() {

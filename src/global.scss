@@ -27,14 +27,57 @@
 @import '@angular/material';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@font-face {
+   font-family: 'SLBSans';
+   font-weight: normal;
+   font-style: normal;
+   src: url('./assets/fonts/SLBSans-Regular.ttf');
+}
+
+ion-modal {
+   --background: transparent !important;
+}
+.sc-ion-select-popover-md {
+   --background: #8B90AD !important;
+   --background-focused: #8B90AD !important;
+}
+
+.sc-ion-select-popover-md:host {
+   --min-height: 23px !important;
+   height: 23px !important;
+}
+
+.item-radio-checked .item-lines-default .ion-focused {
+   --background: #8B90AD !important;
+}
+
+.sc-ion-select-popover-md-h ion-list.sc-ion-select-popover-md {
+   margin-top: -8px;
+   margin-bottom: -8px;
+}
+
+.select-interface-option {
+   --color: #CCCFDE !important;
+   font-size: 14px !important;
+}
+
+ion-label {
+   font-family: 'SLBSans' !important;
+}
+
 ion-content {
    background: #FFF !important;
    --background: #FFF !important;
-   font-family: 'sans';
+}
+
+ion-loading.custom-loading {
+   --background: #fff;
+   --spinner-color: #051464;
+   color: #051464;
 }
 
 ion-toolbar {
-   --background: #0c0c6d;
+   --background: #051464;
 }
 
 //#06062b // dark
@@ -44,8 +87,8 @@ ion-toolbar {
 // #2dd36f 
 // #e0a41c under pump
 ion-tab-bar {
-   --background: #0c0c6d;
-   background: #0c0c6d;
+   --background: #051464;
+   background: #051464;
    height: 68px;
 
    ion-tab-button {
@@ -62,12 +105,12 @@ ion-toolbar {
 }
 
 ion-content {
-   --background: #272745 !important;
+   --background: #22263D !important;
    margin-top: 58px !important;
 }
 
 .highcharts-background {
-   fill: #272745 !important;
+   fill: #131629 !important;
 }
 
 .highcharts-axis-title {
@@ -273,4 +316,16 @@ ion-content {
 ::-webkit-scrollbar {
    width: 5px;
    height: 5px;
+}
+
+.searchbar-search-icon.sc-ion-searchbar-md {
+   color: #FFF !important;
+}
+
+.select-text {
+   margin-left: 15px;
+}
+
+.select-icon {
+   opacity: 0;
 }

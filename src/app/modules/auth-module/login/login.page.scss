@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 15px;
+    .container_ipt{
+        display: flex;
+        flex: 1;
+        flex-direction: column; 
+    }
+}

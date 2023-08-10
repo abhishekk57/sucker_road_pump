@@ -1,0 +1,150 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .drow_down {
+        width: 90%;
+        height: 36px;
+        background: #0B0C18;
+        margin: 10px auto;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+
+        .item-a1 {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        ion-select {
+            color: #FFF !important;
+        }
+
+        .custom-popover ion-select-popover ion-list {
+            background: #0B0C18 !important;
+        }
+
+        .custom-popover ion-select-popover ion-item {
+            --background: #0B0C18 !important;
+            --color: #FFF !important;
+        }
+
+        ion-select::part(icon) {
+            opacity: 0;
+        }
+
+        ion-select::part(text) {
+            margin-left: 15px;
+            font-family: 'SLBSans';
+        }
+
+        ion-select::part(ion-item) {
+            --background: #000 !important;
+        }
+
+        ion-select::part(label) {
+            font-family: 'SLBSans';
+        }
+
+        p {
+            color: #FFF;
+            font-size: 16px;
+            margin: 10px;
+            width: 87%;
+        }
+
+        ion-icon {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    .items_container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .item-a {
+            color: #fff !important;
+            box-shadow: 0.2px 0px 0.5px 1px rgba(139, 144, 173, 0.7490196078), 0 0.7px 0px 0 rgba(139, 144, 173, 0.7490196078);
+            margin: 0px auto;
+            width: 90%;
+            height: auto;
+            border-radius: 6px;
+            background: #131629;
+            padding: 5px;
+            text-align: center;
+
+            p {
+                font-size: 14px;
+                font-weight: 500;
+                color: #6C7191;
+                line-height: 10px;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 700;
+                color: #fff;
+                margin-left: 5px;
+                font-family: 'SLBSans';
+            }
+        }
+
+        .a1 {
+            margin-top: 10px;
+        }
+
+        .a12 {
+            height: 468px !important;
+            margin-bottom: 15px !important;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: #8B90AD;
+        }
+    }
+}
+
+ion-modal {
+    height: 260px;
+    width: 91% !important;
+    border-radius: 6px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .item-a12 {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        p {
+            font-size: 14px;
+            margin: 4px 2px 15px -3px;
+            font-family: 'SLBSans';
+            font-weight: 700;
+        }
+    }
+}
+
+ion-select-popover ion-list {
+    background: #0B0C18 !important;
+}
+
+ion-select-popover ion-item {
+    --background: #0B0C18 !important;
+    --color: #FFF !important;
+}
+
+.select-interface-option {
+    --background: #0B0C18 !important;
+}

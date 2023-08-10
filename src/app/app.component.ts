@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@capacitor/splash-screen';
-import { BackgroundColorOptions, StatusBar, Style } from '@capacitor/status-bar';
+import { BackgroundColorOptions, StatusBar } from '@capacitor/status-bar';
 import { type AuthenticateOptions, BiometricAuth, BiometryErrorType, BiometryType, type CheckBiometryResult, getBiometryName, type ResultError } from '@aparajita/capacitor-biometric-auth'
 @Component({
   selector: 'app-root',
@@ -34,7 +33,7 @@ export class AppComponent {
       if (this.platform.is("cordova") && !this.platform.is("mobileweb")) {
         this.hideSplashScreen();
       }
-      this.askFingerPrintOption();
+      // this.askFingerPrintOption();
     });
   }
   async hideSplashScreen() {
@@ -44,18 +43,32 @@ export class AppComponent {
     }
     await StatusBar.setBackgroundColor(option);
   }
-  askFingerPrintOption() {
-    BiometricAuth.checkBiometry().then((value) => {
-      console.log(value);
-      if (value.isAvailable) {
-        if (value.biometryType > 0) {
+  // askFingerPrintOption() {
+  //   if (this.service.isDevice()) {
+  //     BiometricAuth.checkBiometry().then((value) => {
+  //       console.log(value);
+  //       let options: AuthenticateOptions = {
+  //         androidTitle: "pelase Sign in"
+  //       };
+  //       BiometricAuth.authenticate(options)
+  //         .then((res: any) => {
+  //           console.log(res)
+  //         })
+  //         .catch((error) => {
+  //           console.log(error)
+  //         })
+  //       // if (value.isAvailable) {
+  //       //   if (value.biometryType > 0) {
 
-        }
-      } else {
-        console.log("FingerPrint not available")
-      }
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
+  //       //   }
+  //       // } else {
+  //       //   console.log("FingerPrint not available")
+  //       // }
+  //     }).catch((error) => {
+  //       console.log(error)
+  //     })
+  //   } else {
+  //     console.log("App is running on web")
+  //   }
+  // }
 }
