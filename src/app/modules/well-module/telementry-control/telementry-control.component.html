@@ -1,4 +1,10 @@
-<p>
-  A Waiting Information for
-  Telemetry & Control Page
-</p>
+<div class="items_container">
+  <div *ngFor="let item of items;let i = index;" class="item-a">
+    <span>{{item.message}}</span>
+    <div class="status_a">
+      <div [ngClass]="item?.code ==1 ? 'status_bar1':( item?.code == 3 ?'status_bar2':'status_bar3')">
+      </div>
+      {{item?.status}}
+    </div>
+  </div>
+</div>

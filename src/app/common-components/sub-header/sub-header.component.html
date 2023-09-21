@@ -4,7 +4,7 @@
     <div (click)="onBackBtnClick()" class="icon-16">
       <ion-icon [src]="leftArrow"></ion-icon>
     </div>
-    <ion-searchbar [placeholder]="Search" [animated]="true" [debounce]="1000"
+    <ion-searchbar mode="md" [placeholder]="Search" [animated]="true" [debounce]="1000"
       (ionInput)="handleInput($event)"></ion-searchbar>
   </div>
 

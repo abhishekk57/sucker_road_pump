@@ -133,13 +133,14 @@
 
     </div>
 
-    <div *ngIf="selectedItem=='Telemetry & Control'" class="items_container">
-
+    <!-- <div *ngIf="selectedItem=='Telemetry & Control'" class="items_container">
       <div class="item-a a1 a12">
         A Waiting Information for
         Telemetry & Control Page
       </div>
-
+    </div> -->
+    <div *ngIf="selectedItem=='Telemetry & Control'">
+      <app-telementry-control></app-telementry-control>
     </div>
 
 

@@ -93,10 +93,14 @@ export class WellDynacardComponent  implements OnInit {
      return [{
        data: this.getSurfaceCardLoadData(),
        type: "line"
-     }, {
-       data: this.getSurfaceCardDownholeData(),
-       type: "line"
      }];
+    //  return [{
+    //    data: this.getSurfaceCardLoadData(),
+    //    type: "line"
+    //  }, {
+    //    data: this.getSurfaceCardDownholeData(),
+    //    type: "line"
+    //  }];
    }
  
    /**

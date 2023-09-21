@@ -17,18 +17,12 @@ export class MenuComponent implements OnInit {
   DashboardIcon: any = Dashboard;
   MoreIcon: any = More;
   isOpenPopOver:boolean = false;
-  constructor(private platform: Platform) { }
+  constructor() { }
 
-  ngOnInit() {
-
-    this.platform.ready()
-      .then(() => {
-        // this.showFingerprintAuthDlg();
-      })
-  }
+  ngOnInit() {  }
   getSelectedTab(event: any): void {
     this.activeTabName = event;
-    event == 'more' ? this.isOpenPopOver = true : false;
+    // event == 'more' ? this.isOpenPopOver = true : false;
   }
 
   public showFingerprintAuthDlg() {

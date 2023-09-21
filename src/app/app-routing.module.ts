@@ -70,8 +70,11 @@ const routes: Routes = [{
       ]
     },
   ]
-}
-]
+},
+{
+  path: 'register',
+  loadChildren: () => import('./modules/auth-module/register/register.module').then(m => m.RegisterPageModule)
+}]
 
 @NgModule({
   imports: [

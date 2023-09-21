@@ -2,19 +2,18 @@
 <ion-content [fullscreen]="true">
 
   <div class="header">
-    <app-sub-header (valueChange)="getInputValue($event)" (OnClickSearch)="OnClickSearch()" [isSearch]="isSearch"
+    <app-sub-header (matCalenderChange)="OnRecieveCalenderData($event)" (valueChange)="getInputValue($event)" (OnClickSearch)="OnClickSearch()" [isSearch]="isSearch"
       [textTitle]="titleData"></app-sub-header>
   </div>
   <div class="container">
 
     <div class="content_cont">
       <div class="d1_c">
-        <div class="d1_sc" *ngFor="let item of mWellList; let i= index">
+        <!-- <div class="d1_sc" *ngFor="let item of 465; let i= index">
           <div (click)="navigateTo(item)" class="d1_sc1">
-
             <div class="d1_detail">
               <div class="well_1">
-                <p class="p1">{{item?.well_name}}</p>
+                <p class="p1">{{item?.wellName}}</p>
                 <span style="font-size: 12px;color: #ADB1C7; margin-left: 9px;">2020-04-14 13:14:59</span>
               </div>
               <p class="p1 p12">Comms Status: <span>Comms Established</span></p>
@@ -22,15 +21,110 @@
               <p class="p1 p12">SPM(Dimensionless): <span>50.0</span></p>
               <div class="status_a">
                 <div
-                  [ngClass]="item?.status =='Over Pumping' ? 'status_bar1':( item?.status == 'Optimum Pumping' ?'status_bar2':'status_bar3')">
+                  [ngClass]="item?.wellStatus =='Over Pumping' ? 'status_bar1':( item?.wellStatus == 'Optimum Pumping' ?'status_bar2':'status_bar3')">
 
                 </div>
-                {{item?.status}}
+                {{item?.wellStatus}}
               </div>
             </div>
 
           </div>
+        </div> -->
+
+
+
+        <div class="mainc" *ngFor="let item of mWellList; let i= index">
+          <div class="div1" [ngClass]="(item?.isDetail == false) ? '':'onchecked'"
+            [ngClass]="(item?.wellStatus == 'Optimum Pumping' && !item?.isDetail) ?'gshadow':((item?.wellStatus == 'Over Pumping' && !item?.isDetail) ? 'rshadow':((item?.wellStatus == 'Under Pumping' && !item?.isDetail) ? 'bshadow':''))">
+            <div class="div11">
+
+              <div *ngIf="!item?.isDetail" class="itemcon">
+                <div class="div12">
+                  <p [ngClass]="item?.wellStatus =='Over Pumping' ? 'pred':( item?.wellStatus == 'Optimum Pumping' ?'pgreen':'pyellow')"
+                    (click)="navigateTo(item)" class="p1">{{item?.wellName}}</p>
+                  <div class="circle cred"
+                    [ngClass]="item?.wellStatus =='Over Pumping' ? 'prbg':( item?.wellStatus == 'Optimum Pumping' ?'pgbg':'pybg')">
+                  </div>
+                  <p class="p1"
+                    [ngClass]="item?.wellStatus =='Over Pumping' ? 'pred':( item?.wellStatus == 'Optimum Pumping' ?'pgreen':'pyellow')">
+                    {{item?.wellStatus}} (PF {{(item?.pumpFillage)}}%)</p>
+                </div>
+                <div class="div122">
+                  <p class="p2">{{item?.dateTime}}</p>
+                  <div *ngIf="item?.wellStatus =='Over Pumping'">
+                    <ion-icon [src]="WifiOffline"></ion-icon>
+                    <ion-icon style="margin-left: 10px;" [src]="Mining"></ion-icon>
+                  </div>
+                  <div *ngIf="item?.wellStatus !='Over Pumping'">
+                    <ion-icon [src]="WWifiOffline"></ion-icon>
+                    <ion-icon style="margin-left: 10px;" [src]="WMining"></ion-icon>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngIf="item?.isDetail" class="itemcon">
+                <div class="div12">
+                  <p (click)="navigateTo(item)" class="p1 itemwhite">{{item?.wellName}} </p>
+                  <div class="circle cred itembg"></div>
+                  <p class="p1 itemwhite">Over Pumping (PF 90%)</p>
+                </div>
+                <div class="div122 mIcon">
+                  <p class="p2 itemwhite">{{item?.dateTime}}</p>
+                  <ion-icon [src]="WWifiOffline"></ion-icon>
+                  <ion-icon style="margin-left: 10px;" [src]="WMining"></ion-icon>
+                </div>
+              </div>
+              <ion-icon *ngIf="!item?.isDetail" (click)="openDetail(i)" [src]="ArrowUp"></ion-icon>
+              <ion-icon *ngIf="item?.isDetail" (click)="openDetail(i)" [src]="ArrowDown"></ion-icon>
+            </div>
+          </div>
+          <div *ngIf="item?.isDetail" class="conta">
+            <div class="itema1">
+              <div class="itema11">
+                <p>SPM </p>
+                <span>50</span>
+              </div>
+              <div class="itema11">
+                <p>Effective Runtime (%)</p>
+                <span>20%</span>
+              </div>
+              <div class="itema11">
+                <p>Min/Max Load (%)</p>
+                <span>23.5%</span>
+              </div>
+            </div>
+            <div class="itema1">
+              <div class="itema11">
+                <p>Pump Fillage</p>
+                <span>50%</span>
+              </div>
+              <div class="itema11">
+                <p>Cycles Today</p>
+                <span>20%</span>
+              </div>
+              <div class="itema11">
+                <p>Gearbox Load (%)</p>
+                <span>23.8%</span>
+              </div>
+            </div>
+            <div class="itema1">
+              <div class="itema11" style="margin-right: 0px !important;">
+                <p>Inferred Production (bpd) </p>
+                <span>50</span>
+              </div>
+              <div class="itema11" style="margin-right: 0px !important;">
+                <p>Structural Load</p>
+                <span>50</span>
+              </div>
+              <div class="itema11" style="margin-right: 0px !important;">
+                <p>Rod Stress (%)</p>
+                <span>50</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+
       </div>
       <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
         <ion-infinite-scroll-content></ion-infinite-scroll-content>

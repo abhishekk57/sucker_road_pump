@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import {  CalendarComponent } from '../calendar-filter/calendar-filter.component';
+import { CalendarComponent } from '../calendar-filter/calendar-filter.component';
 import { Router } from '@angular/router';
 import { leftArrow, Filter, Search, Comment } from '../../../assets/index';
 
@@ -19,6 +19,7 @@ export class SubHeaderComponent implements OnInit {
   CommentIcon = Comment;
   Search: string = "Search";
   @Output() valueChange = new EventEmitter();
+  @Output() matCalenderChange = new EventEmitter();
   constructor(private modalContrl: ModalController, private router: Router) { }
   handleInput(event: any) {
     this.valueChange.emit(event.target.value.toLowerCase());
@@ -41,9 +42,9 @@ export class SubHeaderComponent implements OnInit {
     });
     await modal.present();
     modal.onDidDismiss()
-    .then((value:any)=>{
-      console.log(value);
-    })
+      .then((dateObject: any) => {
+        this.matCalenderChange.emit(dateObject);
+      });
   }
   onBackBtnClick() {
     this.isSearch = !this.isSearch;
@@ -52,7 +53,7 @@ export class SubHeaderComponent implements OnInit {
   _OnSearchIconClick() {
     this.isSearch = true;
   }
-  _OnCommentIconClick(){
+  _OnCommentIconClick() {
     console.log('_____ on comment icon click _____')
   }
 }

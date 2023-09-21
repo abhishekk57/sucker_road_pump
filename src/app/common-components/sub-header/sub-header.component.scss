@@ -6,6 +6,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex: 1;
 
         ion-searchbar {
             --background: #000 !important;
@@ -17,7 +18,8 @@
             --box-shadow: 0.2px 0px 1px 1px #989aa2, 0 1px 0px 0 #989aa2;
             margin-top: 3px;
             transform: scaleY(0.8);
-
+            height: 44px;
+            width: 86%;
             input {
                 font-size: 11px !important;
             }
@@ -87,4 +89,7 @@
 
 .searchbar-search-icon {
     color: #FFF !important;
+}
+.searchbar-input .sc-ion-searchbar-ios{
+    padding-left: 30px !important;
 }

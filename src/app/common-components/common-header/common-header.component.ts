@@ -15,5 +15,8 @@ export class CommonHeaderComponent implements OnInit {
 
   ngOnInit() { }
 
+  _OnOpenMenuClick = () => {
+    
+  }
 
 }
